@@ -4,5 +4,7 @@ public class Main {
 	Grid grid = new Grid();
 	grid.map();
 	//test
+	//test2
+	//test3
 	}
 }
