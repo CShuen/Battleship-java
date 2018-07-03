@@ -8,6 +8,7 @@ public class Grid {
 	private String mapDisplay = "";
 	private int[][] show = new int[row][col];
 	Game g = new Game();
+	//test
 
 	
 	
@@ -23,7 +24,6 @@ public class Grid {
 		System.out.println(mapDisplay);
 		System.out.println();
 		getmap();
-		
 		
 		for (int i = 0; i <show.length;i++) {
 			for ( int j = 0; j < show[i].length; j++) {
