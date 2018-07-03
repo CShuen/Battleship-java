@@ -11,22 +11,13 @@ public class Grid {
 	
 	
 	
-	public void map(){
+	public void map(int ui){
 		
-		
-		for (int i = 0; i <show.length;i++) {
-			for ( int j = 0; j < show[i].length; j++) {
-				show[i][j] = 0;
-				mapDisplay += Integer.toString(show[i][j]);
-				}
-			mapDisplay += "\n";
-			}
-		System.out.println(mapDisplay);
-		System.out.println();
 		show= g.checkpotion(show);
-		show= g.Beginnercheckship(show);
-		show= g.Beginnerchecktrap(show);
+		show= g.Beginnercheckship(show,ui);
+		show= g.Beginnerchecktrap(show,ui);
 		getGrid();
+		mapDisplay = "";
 		
 		for (int i = 0; i <show.length;i++) {
 			for ( int j = 0; j < show[i].length; j++) {
@@ -35,10 +26,23 @@ public class Grid {
 			mapDisplay += "\n";
 			}
 		System.out.println(mapDisplay);
+		userMap();
 		
 		
 	}
-	public String getmap(){
+	public void userMap() {
+		String[][] usermap = new String[row][col];
+		for (int i = 0; i <row;i++) {
+			for ( int j = 0; j < col; j++) {
+				usermap[i][j] = "#";
+				mapDisplay += usermap[i][j];
+				}
+			mapDisplay += "\n";
+			}
+		System.out.println(mapDisplay);
+	}
+	
+	public String getusermap(){
 		return mapDisplay;
 	}
 	
