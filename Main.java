@@ -52,6 +52,9 @@ public class Main {
 				t.setTType();
 				int tr = t.getTType();
 				System.out.println("You have revealed a trap." );
+				// reduce 1 life here
+				life.reducelife();
+				System.out.println(life.getLife());
 				
 				int i = t.getTType();
 				System.out.println(i);
