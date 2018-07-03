@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,12 +8,9 @@ public class Game {
 	private int y;
 	private int count = 0;
 	private static Game ga = new Game();
+	ArrayList<int [][]> tlist = new ArrayList<int [][]>();
+	ArrayList<int [][]> slist = new ArrayList<int [][]>();
 	
-	//ArrayList<Integer> slist = new ArrayList<>();
-
-	/*
-	 * public Game(int x, int y){ setRow(x); setCol(y); }
-	 */
 
 	public void setRow(int r) {
 		// TODO Auto-generated method stub
@@ -95,7 +93,7 @@ public class Game {
 				}
 			}
 			count++;
-			
+			slist.add(backgrid);
 
 			if (hvship) {
 				hvship = false;
@@ -111,8 +109,18 @@ public class Game {
 		
 		return backgrid;
 	}
-	public void checkship(){
+	public void checkship(int[] useri){
+		Grid g = new Grid();
+		int[][] ships = g.getGrid();
 		
+		for(int i = 1; i > 0; i++){
+			ships[useri[0+i]][useri[1+i]] = 1;
+			
+		}
+		ships[useri[0]][useri[1]] = 0;
+		for(int j = ships[useri[0]][useri[1]]; j < 0; j--){
+			
+		}
 	}
 	
 	private int getTrapDiff(int ui){
@@ -129,8 +137,9 @@ public class Game {
 	
 	public int[][] makechecktrap(int[][] backgrid, int ui){
 		int traplevel = getTrapDiff(ui);
-		
 		count = 0;
+		
+		
 	while(count < traplevel){
 		Trap t = new Trap();
 		t.setTRow();
@@ -148,6 +157,7 @@ public class Game {
 		}
 		
 		count++;
+		tlist.add(backgrid);
 	}
 	return backgrid;
 	}
@@ -183,6 +193,12 @@ public class Game {
 		}
 	return backgrid;
 	}
-	
-
+	public ArrayList<int[][]> getshiplist(){
+		
+		return slist;
+	}
+public ArrayList<int[][]> gettraplist(){
+		
+		return tlist;
+	}
 }
