@@ -15,8 +15,7 @@ public class Main {
 		int userinput = input.nextInt();
 		
 		if(userinput == 1){
-			Game start = new Game();
-			start.setBeginner();
+			
 			grid.map();
 			Life life = new Life();
 			life.setLife();
@@ -38,7 +37,7 @@ public class Main {
 			}
 			}*/
 		}
-		else if(userinput == 2){
+		/*else if(userinput == 2){
 			Game start = new Game();
 			start.setIntermediate();
 			/*System.out.println("Please enter row of choice.");
@@ -60,7 +59,6 @@ public class Main {
 		
 		
 		
-		
-}
+
 }
 }

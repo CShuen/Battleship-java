@@ -6,11 +6,9 @@ public class Game {
 	private int x;
 	private int y;
 	private int count = 0;
-	private int[][] backgrid;
-	private int[][] trapgrid;
-	private int[][] potiongrid;
 	private static Game ga = new Game();
-	ArrayList<Integer> slist = new ArrayList<>();
+	
+	//ArrayList<Integer> slist = new ArrayList<>();
 
 	/*
 	 * public Game(int x, int y){ setRow(x); setCol(y); }
@@ -36,10 +34,8 @@ public class Game {
 	public int[][] Beginnercheckship(int[][] backgrid) {
 		int ship = 80;
 		Random random = new Random();
-		Grid g = new Grid();
-		backgrid = g.getGrid();
 		
-
+		
 		while (count < ship) {
 			Ship r = new Ship();
 			r.createShipCol();
@@ -93,20 +89,20 @@ public class Game {
 
 				count -= 1;
 			} else {
-				g.setGridShip(backgrid);
+				
 				backgrid[shiprow][shipcol] = 1;
 			}
 			
 
 		}
+		
 		return backgrid;
 	}
 	public int[][] Intermediatecheckship(int[][] backgrid) {
 		int ship = 50;
 		Random random = new Random();
-		Grid g = new Grid();
-		backgrid = g.getGrid();
 		
+
 		while (count < ship) {
 			Ship r = new Ship();
 			r.createShipCol();
@@ -160,7 +156,7 @@ public class Game {
 
 				count -= 1;
 			} else {
-				g.setGridShip(backgrid);
+			
 				backgrid[shiprow][shipcol] = 1;
 			}
 			
@@ -171,9 +167,8 @@ public class Game {
 	public int[][] Advancecheckship(int[][] backgrid) {
 		int ship = 20;
 		Random random = new Random();
-		Grid g = new Grid();
-		backgrid = g.getGrid();
-
+		
+		
 		while (count < ship) {
 			Ship r = new Ship();
 			r.createShipCol();
@@ -227,7 +222,7 @@ public class Game {
 
 				count -= 1;
 			} else {
-				g.setGridShip(backgrid);
+				
 				backgrid[shiprow][shipcol] = 1;
 			}
 			
@@ -236,10 +231,8 @@ public class Game {
 		return backgrid;
 	}
 	
-	public int[][] Beginnerchecktrap(int[][] trapgrid){
+	public int[][] Beginnerchecktrap(int[][] backgrid){
 		int traplevel = 10;
-		Grid tg = new Grid();
-		trapgrid = tg.getGrid();
 		
 		
 	while(count < traplevel){
@@ -253,12 +246,12 @@ public class Game {
 		
 		boolean placetraps = false;
 		
-		if(trapgrid[trow][tcol] != 1){
-			trapgrid[trow][tcol] = 3;
+		if(backgrid[trow][tcol] != 1){
+			backgrid[trow][tcol] = 3;
 			placetraps = true;
 			}
-		else if(trapgrid[trow][tcol] != 3){
-			trapgrid[trow][tcol] = 3;
+		else if(backgrid[trow][tcol] != 3){
+			backgrid[trow][tcol] = 3;
 			placetraps = true;
 		}
 		
@@ -266,16 +259,14 @@ public class Game {
 		if(placetraps = false){
 			count --;
 			}else {
-				tg.setGridTrap(trapgrid);
-				trapgrid[trow][tcol] = 3;
+				
+				backgrid[trow][tcol] = 3;
 			}
 		}
-	return trapgrid;
+	return backgrid;
 	}
-	public int[][] Intermediatechecktrap(int[][] trapgrid){
+	public int[][] Intermediatechecktrap(int[][] backgrid){
 		int traplevel = 20;
-		Grid tg = new Grid();
-		trapgrid = tg.getGrid();
 		
 	while(count < traplevel){
 		Trap t = new Trap();
@@ -288,12 +279,12 @@ public class Game {
 		
 		boolean placetraps = false;
 		
-		if(trapgrid[trow][tcol] != 1){
-			trapgrid[trow][tcol] = 3;
+		if(backgrid[trow][tcol] != 1){
+			backgrid[trow][tcol] = 3;
 			placetraps = true;
 			}
-		else if(trapgrid[trow][tcol] != 3){
-			trapgrid[trow][tcol] = 3;
+		else if(backgrid[trow][tcol] != 3){
+			backgrid[trow][tcol] = 3;
 			placetraps = true;
 		}
 		
@@ -301,16 +292,14 @@ public class Game {
 		if(placetraps = false){
 			count --;
 			}else {
-				tg.setGridTrap(trapgrid);
-				trapgrid[trow][tcol] = 3;
+				
+				backgrid[trow][tcol] = 3;
 			}
 		}
-	return trapgrid;
+	return backgrid;
 	}
-	public int[][] Advancechecktrap(int[][] trapgrid){
+	public int[][] Advancechecktrap(int[][] backgrid){
 		int traplevel = 30;
-		Grid tg = new Grid();
-		trapgrid = tg.getGrid();
 		
 	while(count < traplevel){
 		Trap t = new Trap();
@@ -323,12 +312,12 @@ public class Game {
 		
 		boolean placetraps = false;
 		
-		if(trapgrid[trow][tcol] != 1){
-			trapgrid[trow][tcol] = 3;
+		if(backgrid[trow][tcol] != 1){
+			backgrid[trow][tcol] = 3;
 			placetraps = true;
 			}
-		else if(trapgrid[trow][tcol] != 3){
-			trapgrid[trow][tcol] = 3;
+		else if(backgrid[trow][tcol] != 3){
+			backgrid[trow][tcol] = 3;
 			placetraps = true;
 		}
 		
@@ -336,16 +325,14 @@ public class Game {
 		if(placetraps = false){
 			count --;
 			}else {
-				tg.setGridTrap(trapgrid);
-				trapgrid[trow][tcol] = 3;
+				
+				backgrid[trow][tcol] = 3;
 			}
 		}
-	return trapgrid;
+	return backgrid;
 	}
-	public int[][] checkpotion(int[][] potiongrid){
+	public int[][] checkpotion(int[][] backgrid){
 		int potion = 18;
-		Grid pg = new Grid();
-		potiongrid = pg.getGrid();
 		
 	while(count < potion){
 		Potion p = new Potion();
@@ -357,12 +344,12 @@ public class Game {
 		
 		boolean placepotion = false;
 		
-		if(potiongrid[prow][pcol] != 1){
-			potiongrid[prow][pcol] = 4;
+		if(backgrid[prow][pcol] != 1){
+			backgrid[prow][pcol] = 4;
 			placepotion = true;
 			}
-		else if(potiongrid[prow][pcol] != 1){
-			potiongrid[prow][pcol] = 4;
+		else if(backgrid[prow][pcol] != 1){
+			backgrid[prow][pcol] = 4;
 			placepotion = true;
 		}
 		
@@ -370,30 +357,30 @@ public class Game {
 		if(placepotion = false){
 			count --;
 			}else {
-				pg.setGridPotion(potiongrid);
-				potiongrid[prow][pcol] = 4;
+				backgrid[prow][pcol] = 4;
 			}
 		}
-	return potiongrid;
+	return backgrid;
 	}
-	public void setBeginner(){
+	/*public void setBeginner(){
 		Grid grids = new Grid();
 		grids.setGridShip(Beginnercheckship(backgrid));
-		grids.setGridTrap(Beginnerchecktrap(trapgrid));
-		grids.setGridPotion(checkpotion(potiongrid));
+		grids.setGridShip(Beginnerchecktrap(backgrid));
+		grids.setGridShip(checkpotion(backgrid));
 	}
+	/*
 	public void setIntermediate(){
 		Grid grids = new Grid();
 		grids.setGridShip(Intermediatecheckship(backgrid));
-		grids.setGridTrap(Intermediatechecktrap(trapgrid));
-		grids.setGridPotion(checkpotion(potiongrid));
+		grids.setGridTrap(Intermediatechecktrap(backgrid));
+		grids.setGridPotion(checkpotion(backgrid));
 	}
 	public void setAdvance(){
 		Grid grids = new Grid();
 		grids.setGridShip(Advancecheckship(backgrid));
-		grids.setGridTrap(Advancechecktrap(trapgrid));
-		grids.setGridPotion(checkpotion(potiongrid));
-	}
+		grids.setGridTrap(Advancechecktrap(backgrid));
+		grids.setGridPotion(checkpotion(backgrid));
+	}*/
 	/*public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 		System.out.println("Please choose a level by typing in the number.\n 1.Beginner\n 2.Intermediate\n 3.Advance");

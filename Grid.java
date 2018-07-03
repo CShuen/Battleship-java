@@ -8,11 +8,11 @@ public class Grid {
 	private String mapDisplay = "";
 	private int[][] show = new int[row][col];
 	Game g = new Game();
-	//test
-
+	
 	
 	
 	public void map(){
+		
 		
 		for (int i = 0; i <show.length;i++) {
 			for ( int j = 0; j < show[i].length; j++) {
@@ -23,7 +23,10 @@ public class Grid {
 			}
 		System.out.println(mapDisplay);
 		System.out.println();
-		getmap();
+		show= g.checkpotion(show);
+		show= g.Beginnercheckship(show);
+		show= g.Beginnerchecktrap(show);
+		getGrid();
 		
 		for (int i = 0; i <show.length;i++) {
 			for ( int j = 0; j < show[i].length; j++) {
@@ -32,6 +35,8 @@ public class Grid {
 			mapDisplay += "\n";
 			}
 		System.out.println(mapDisplay);
+		
+		
 	}
 	public String getmap(){
 		return mapDisplay;
@@ -53,12 +58,6 @@ public class Grid {
 	public void setGridShip(int[][] backgrid){
 		show = backgrid;
 		
-	}
-	public void setGridTrap(int[][] trapgrid){
-		show = trapgrid;
-	}
-	public void setGridPotion(int[][] potiongrid){
-		show = potiongrid;
 	}
 	
 	public int[][] getGrid(){
