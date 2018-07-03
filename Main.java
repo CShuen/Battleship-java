@@ -68,6 +68,11 @@ public class Main {
 				System.out.println(i);
 				grid.displayUserMap();
 		}
+			else{
+				System.out.println("You missed a ship please try again.");
+				grid.setUserMap(coorrow-1, coorcol-1, " ");
+				grid.displayUserMap();
+			}
 			
 }
 }
