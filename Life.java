@@ -4,8 +4,8 @@ public class Life {
 	private int life = 15;
 	
 	
-	public void setLife(){
-		life = 15;
+	public void setLife(int l){
+		life = l;
 	}
 	public int getLife(){
 		return life;

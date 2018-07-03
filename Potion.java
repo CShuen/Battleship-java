@@ -24,15 +24,26 @@ public class Potion {
 	public int getPotionCol(){
 		return col;
 	}
-	public void lifesaverpotion(){
+	public void potiont(){
+		Random random = new Random();
+		potiontype = random.nextInt(2);
+		if(potiontype== 0){
+		int live = 1;
 		Life life = new Life();
-		life.increaselife();
-		life.getLife();
+		int userlife = life.getLife();
+		life.setLife(userlife+live);
+		}
+		else if(potiontype == 1){
+			Game p1 = new Game();
+			for(int i = 0; i < 20; i++){
+				System.out.println(p1.getshiplist());
+			}
+		}else if(potiontype == 2){
+			Game p1 = new Game();
+			for(int i = 0; i < 10; i++){
+				System.out.println(p1.gettraplist());
+			}
+		}
 	}
-	public void traprevealpotion(){
-		
-	}
-	public void shipreveal(){
-		
-	}
+
 }

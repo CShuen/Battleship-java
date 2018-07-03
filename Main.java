@@ -19,16 +19,19 @@ public class Main {
 			Life life = new Life();
 			
 		for(int counter =1; counter >0; counter++){
-			life.setLife();
+			
+			life.setLife(15);
 			System.out.println(life);
 			System.out.println("Please enter the row.");
 			int coorrow = input.nextInt();
 			System.out.println("Please enter the col.");
 			int coorcol = input.nextInt();
 			
+			
 			int[][] show = grid.getGrid();
 			if(show[coorrow-1][coorcol-1] == 1){
-				System.out.println("You have reveal a ship");
+				System.out.println("You have revealed a ship");
+				
 				grid.setUserMap(coorrow-1, coorcol-1, "O");
 				for(int k=2; k>1; k++){
 					if(show[coorrow-1][coorcol-k] == 1 && coorcol>=1){
@@ -43,15 +46,29 @@ public class Main {
 					}
 				}
 				
-				
-				
-				
 			}
-			else if(show[coorrow][coorcol] == 3){
-				System.out.println("You have reveal a ship");
-				show[coorrow][coorcol] = 7;
+			else if(show[coorrow-1][coorcol-1] == 3){
+				Trap t = new Trap();
+				t.setTType();
+				int tr = t.getTType();
+				System.out.println("You have revealed a trap." );
+				
+				int i = t.getTType();
+				System.out.println(i);
+				grid.setUserMap(coorrow-1, coorcol-1, "T");
+				grid.displayUserMap();
 			}
+			else if(show[coorrow-1][coorcol-1] == 4){
+				int l = life.getLife();
+				System.out.println("You have revealed a potion.");
+				grid.setUserMap(coorrow-1, coorcol-1, "T");
+				Trap t = new Trap();
+				t.setTType();
+				int i = t.getTType();
+				System.out.println(i);
+				grid.displayUserMap();
 		}
 			
+}
 }
 }

@@ -27,22 +27,22 @@ public class Trap {
 	}
 	public void setTType(){
 		Random random = new Random();
-		traptype = random.nextInt(2);
+		traptype = random.nextInt(1);
+	
 		if (traptype == 0){
-			int live = 1;
 			Life life = new Life();
-			life.setLife();
-			//int playerlife = life;
-			//life += live;
+			life.reducelife();
+			System.out.println(life.getLife());
 		}
 		else if(traptype == 1){
 			Trap trap = new Trap();
-			
-			
+			int live = 2;
+			Life life = new Life();
+			int userlife = life.getLife();
+			life.setLife(userlife-live);
+			System.out.println(life.getLife());
 		}
-		else if(traptype == 2){
-			
-		}
+		
 	}
 	
 	public int getTType(){
