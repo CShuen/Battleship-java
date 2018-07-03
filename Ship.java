@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Ship {
-	
+	private int count = 0;
 	private int row;
 	private int col;
 	
@@ -24,4 +24,6 @@ public class Ship {
 	public int getShipCol(){
 		return col;
 	}
+	
+	
 }

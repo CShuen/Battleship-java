@@ -1,14 +1,18 @@
+import java.util.ArrayList;
+
+
 public class Grid {
 	
 	private int row = 20;
 	private int col = 60;
+	private String mapDisplay = "";
 	private int[][] show = new int[row][col];
 	Game g = new Game();
-	
+
 	
 	
 	public void map(){
-		String mapDisplay = "";
+		
 		for (int i = 0; i <show.length;i++) {
 			for ( int j = 0; j < show[i].length; j++) {
 				show[i][j] = 0;
@@ -18,8 +22,7 @@ public class Grid {
 			}
 		System.out.println(mapDisplay);
 		System.out.println();
-		mapDisplay = "";
-		show = g.Beginnercheckship(show);
+		getmap();
 		
 		
 		for (int i = 0; i <show.length;i++) {
@@ -29,6 +32,9 @@ public class Grid {
 			mapDisplay += "\n";
 			}
 		System.out.println(mapDisplay);
+	}
+	public String getmap(){
+		return mapDisplay;
 	}
 	
 	
@@ -44,13 +50,19 @@ public class Grid {
 		return show[x][y];
 	}
 	
-	public void setGrid1(int[][] backgrid){
+	public void setGridShip(int[][] backgrid){
 		show = backgrid;
+		
+	}
+	public void setGridTrap(int[][] trapgrid){
+		show = trapgrid;
+	}
+	public void setGridPotion(int[][] potiongrid){
+		show = potiongrid;
 	}
 	
 	public int[][] getGrid(){
 		return show;
 	}
-	
 	
 }
