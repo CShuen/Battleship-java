@@ -7,6 +7,7 @@ public class Grid {
 	private int col = 60;
 	private String mapDisplay = "";
 	private int[][] show = new int[row][col];
+	String[][] usermap = new String[row][col];
 	Game g = new Game();
 	
 	
@@ -14,8 +15,8 @@ public class Grid {
 	public void map(int ui){
 		
 		show= g.checkpotion(show);
-		show= g.Beginnercheckship(show,ui);
-		show= g.Beginnerchecktrap(show,ui);
+		show= g.makegridcheckship(show,ui);
+		show= g.makechecktrap(show,ui);
 		getGrid();
 		mapDisplay = "";
 		
@@ -26,20 +27,34 @@ public class Grid {
 			mapDisplay += "\n";
 			}
 		System.out.println(mapDisplay);
-		userMap();
+		populateUserMap();
+		displayUserMap();
 		
 		
 	}
-	public void userMap() {
-		String[][] usermap = new String[row][col];
+	public void populateUserMap() {
+		
 		for (int i = 0; i <row;i++) {
 			for ( int j = 0; j < col; j++) {
 				usermap[i][j] = "#";
+				}
+			}
+	}
+	
+	public void displayUserMap() {
+		mapDisplay ="";
+		for (int i = 0; i <row;i++) {
+			for ( int j = 0; j < col; j++) {
 				mapDisplay += usermap[i][j];
 				}
 			mapDisplay += "\n";
 			}
 		System.out.println(mapDisplay);
+		
+	}
+	
+	public void setUserMap(int row, int col, String item) {
+		usermap[row][col] = item;
 	}
 	
 	public String getusermap(){

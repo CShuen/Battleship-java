@@ -41,7 +41,7 @@ public class Game {
 		}
 		return 0;
 	}
-	public int[][] Beginnercheckship(int[][] backgrid,int ui) {
+	public int[][] makegridcheckship(int[][] backgrid,int ui) {
 		int ship = getShipDiff(ui);
 		Random random = new Random();
 		
@@ -54,8 +54,10 @@ public class Game {
 			int shiprow = r.getShipRow();
 
 			boolean hvship = false;
-
+			
 			int length = random.nextInt(3) + 3;
+			
+			
 			if (shipcol < 54) {
 				for (int a = shipcol; a < shipcol + (length + 1); a++) {
 
@@ -93,6 +95,7 @@ public class Game {
 				}
 			}
 			count++;
+			
 
 			if (hvship) {
 				hvship = false;
@@ -108,6 +111,9 @@ public class Game {
 		
 		return backgrid;
 	}
+	public void checkship(){
+		
+	}
 	
 	private int getTrapDiff(int ui){
 		if(ui==1){
@@ -121,7 +127,7 @@ public class Game {
 		return 0;
 	}
 	
-	public int[][] Beginnerchecktrap(int[][] backgrid, int ui){
+	public int[][] makechecktrap(int[][] backgrid, int ui){
 		int traplevel = getTrapDiff(ui);
 		
 		count = 0;

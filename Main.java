@@ -27,9 +27,25 @@ public class Main {
 			int coorcol = input.nextInt();
 			
 			int[][] show = grid.getGrid();
-			if(show[coorrow][coorcol] == 1){
+			if(show[coorrow-1][coorcol-1] == 1){
 				System.out.println("You have reveal a ship");
-//				String[coorrow][coorcol] = " ";	//7 is reveal ship
+				grid.setUserMap(coorrow-1, coorcol-1, "O");
+				for(int k=2; k>1; k++){
+					if(show[coorrow-1][coorcol-k] == 1 && coorcol>=1){
+						grid.setUserMap(coorrow-1, coorcol-k, "O");
+						grid.displayUserMap();
+					}
+					else if(show[coorrow-1][coorcol+k-2] == 1){
+						grid.setUserMap(coorrow-1, coorcol+k-2, "O");
+						grid.displayUserMap();
+					}else{
+						k=0;
+					}
+				}
+				
+				
+				
+				
 			}
 			else if(show[coorrow][coorcol] == 3){
 				System.out.println("You have reveal a ship");
